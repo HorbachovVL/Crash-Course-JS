@@ -32,3 +32,24 @@ function processUserInput(callback) {
 };
 
 processUserInput(greeting);
+
+const funct = (a, b, ...rest) => {
+    console.log(rest)
+    return a + b;
+}
+console.log(funct(5, 10, 55, 99, 'num', 'sum'));
+
+const newHuman = {
+    name: 'Vova',
+    age: 32
+};
+
+//деструктуризація
+const sayHello = (obj) => {
+    // const name = obj.name;
+    // const age = obj.age;
+    const {name, age} = obj;
+    console.log(`Hello my name is ${name} and my age is ${age}`);
+    // console.log(`Hello my name is ${obj.name} and my age is ${obj.age}`);
+}
+sayHello(newHuman);
