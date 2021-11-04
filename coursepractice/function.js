@@ -13,26 +13,69 @@ anotherFunc();
 
 
 /////////////callback////////////////////////////
-let func = function(callback) {
-    let name = 'Vova';
-    callback(name);
+function fn (callback) {
+    console.log('fn');
+    callback();
 }
 
-func(function(n){
-    console.log(`Hello ${n}`);
-});
+const sayHello = () => {
+    console.log('Hello');
+}
+fn(sayHello);
 
-function greeting(name) {
-    console.log(`Hello ${name}`);
-};
+function repeat(count, callback) {
+    for (let i = 0; i < count; i++) {
+        callback();
+    }
+}
 
-function processUserInput(callback) {
-    let name = 'Volodymyr';
-    callback(name);
-};
+function sayHello() {
+    console.log('Hello');
+}
+function sayBye() {
+    console.log('Bye');
+}
 
-processUserInput(greeting);
+repeat(5, sayHello);
+repeat(3, sayBye);
 
+///////////////////////////////////////////////
+function filter(arr, callback) {
+    const result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (callback(arr[i])) {
+            result.push(arr[i])
+        }
+    }
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] < 4) {
+    //         result.push(arr[i])
+    //     }
+    // }
+    return result;
+}
+const numbers = [1, 2, 3, 4, 5, 6];
+console.log(filter(numbers, x => x < 4));
+
+const persons = [
+    {
+        name: 'Vova',
+        age: 32,
+    },
+    {
+        name: 'Oleh',
+        age: 22,
+    },
+    {
+        name: 'Ivan',
+        age: 15,
+    },
+];
+console.log(filter(persons, ({ age }) => age > 15));
+
+//////////////////////////////////////////////////////
 const funct = (a, b, ...rest) => {
     console.log(rest)
     return a + b;
@@ -44,7 +87,7 @@ const newHuman = {
     age: 32
 };
 
-//деструктуризація
+////////////////////////////////////////////
 const sayHello = (obj) => {
     // const name = obj.name;
     // const age = obj.age;
@@ -53,3 +96,4 @@ const sayHello = (obj) => {
     // console.log(`Hello my name is ${obj.name} and my age is ${obj.age}`);
 }
 sayHello(newHuman);
+
