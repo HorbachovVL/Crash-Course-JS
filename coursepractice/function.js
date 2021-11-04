@@ -97,3 +97,21 @@ const sayHello = (obj) => {
 }
 sayHello(newHuman);
 
+////////////////////////////////////////////////////////////
+function counter() {
+    let x = 0;
+
+    function increment() {
+        console.log(x++);
+    }
+    return increment;
+}
+
+const counter1 = counter();
+const counter2 = counter();
+
+counter1();
+counter1();
+
+counter2();
+counter2()
