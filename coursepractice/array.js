@@ -10,7 +10,6 @@ const arr4 = [...arr1, ...arr2];
 console.log(arr3);
 console.log(arr4);
 
-
 const arrr = ['Bobby', 'Peter'];
 console.log(arrr);
 const [a, b] = arrr;
@@ -36,8 +35,30 @@ for (let i = 0; i < arr4.length; i += 1) {
         // console.log(a, b);
     }
 }
-console.log(arr4)
+console.log(arr4);
 
+///////////////////////////////////////////////////////////////////////////
+
+const medals = ['gold', 'silver', 'bronze'];
+
+
+medals.forEach((item, i) => {
+    console.log(`I win ${item} and i stand at ${i + 1} position`);
+});
+console.log(medals.reverse());
+
+const addremove = ['apple', 'orange', 'strawberry'];
+console.log(addremove.slice(1, 3));
+addremove.push('banana');
+console.log(addremove);
+addremove.pop();
+console.log(addremove);
+addremove.shift();
+console.log(addremove);
+addremove.unshift('tomato');
+console.log(addremove);
+addremove.slice(1, 2);
+console.log(addremove);
 
 ///////////////////////////////8.11.21/////////////////////////////
 const array = [

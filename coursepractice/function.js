@@ -11,8 +11,42 @@ let anotherFunc = function() {
 }
 anotherFunc();
 
+function sum(a, b) {
+    return a + b;
+};
 
-/////////////callback////////////////////////////
+console.log(sum(5, 10));
+
+////////////////////////////////////////////
+//callback
+////////////////////////////////////////////
+
+const callbackk = (callback) => {
+    console.log('First');
+    callback();//іде виклик параметру(параметр = функція)
+};
+
+const sayCall = () => {
+    console.log('Second');
+}
+callbackk(sayCall);
+//Іде виклик функції callback яка консолить 'First',і приймає як параметр функцію sayCall яка консолить 'Second'
+let name = 'Vova',
+    age = 32;
+
+const hello = (callback) => {
+    console.log(`Hi my name is ${name} and my age is ${age}`);
+    callback();
+};
+
+const bye = () => {
+    console.log(`Bye i am ${name} and my age is ${age}`);
+}
+
+hello(bye);
+
+
+
 function fn (callback) {
     console.log('fn');
     callback();
@@ -39,7 +73,7 @@ function sayBye() {
 repeat(5, sayHello);
 repeat(3, sayBye);
 
-///////////////////////////////////////////////
+
 function filter(arr, callback) {
     const result = [];
 
@@ -75,7 +109,7 @@ const persons = [
 ];
 console.log(filter(persons, ({ age }) => age > 15));
 
-//////////////////////////////////////////////////////
+
 const funct = (a, b, ...rest) => {
     console.log(rest)
     return a + b;
@@ -87,7 +121,7 @@ const newHuman = {
     age: 32
 };
 
-////////////////////////////////////////////
+
 const sayHello = (obj) => {
     // const name = obj.name;
     // const age = obj.age;
@@ -97,7 +131,7 @@ const sayHello = (obj) => {
 }
 sayHello(newHuman);
 
-////////////////////////////////////////////////////////////
+
 function counter() {
     let x = 0;
 
@@ -115,7 +149,6 @@ counter1();
 
 counter2();
 counter2()
-
 
 //////////////////////8.11.21////////////////////////////
 const human = {
@@ -187,4 +220,3 @@ function saySomething(sm) {
 saySomething(function() {
     console.log('Hello');
 });
-
