@@ -10,6 +10,7 @@ const arr4 = [...arr1, ...arr2];
 console.log(arr3);
 console.log(arr4);
 
+
 const arrr = ['Bobby', 'Peter'];
 console.log(arrr);
 const [a, b] = arrr;
@@ -36,3 +37,33 @@ for (let i = 0; i < arr4.length; i += 1) {
     }
 }
 console.log(arr4)
+
+
+///////////////////////////////8.11.21/////////////////////////////
+const array = [
+    {name: 'Vova', age: 32},
+    {name: 'Dima', age: 33},
+    {name: 'Misha', age: 31},
+];
+
+const name = array.map(({ name }) => name);
+// const name = array.map(obj => {
+//     return obj.name;
+// });
+console.log(name);
+
+const numbers = [2, 4, 6, 8];
+const allEven = numbers.every(item => {
+     return item % 2 === 0;
+});
+const sumAll = numbers.reduce((accumulator, item) => {
+    return accumulator + item
+}, 0);
+console.log(sumAll);
+console.log(allEven);
+
+const someNum = [22, 34, 9, 15, 60, 3, 101]
+// const someNumSort = someNum.sort((a, b) => a - b);
+const someNumSort = someNum.sort((a, b) => b - a);
+// console.log(someNum.sort())
+console.log(someNumSort);
