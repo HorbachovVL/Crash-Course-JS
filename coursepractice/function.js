@@ -220,3 +220,56 @@ function saySomething(sm) {
 saySomething(function() {
     console.log('Hello');
 });
+
+//////////////////////9.11.21//////////////////////////////////////////
+function reverseStr(str) {
+    return str.split('').reverse().join('');
+    
+}
+
+console.log(reverseStr('Hello'));
+
+function calc(num1, operator, num2) {
+    if (operator === '+') {
+        return num1 + num2;
+    } else if (operator === '-') {
+        return num1 - num2;
+    } else if (operator === '*') {
+        return num1 * num2;
+    } else if (operator === '/') {
+        return num1 / num2
+    } else {
+        console.log('Something goes wrong')
+    }
+}
+console.log(calc(10, '+', 15));
+console.log(calc(10, '/', 15));
+console.log(calc(10, '*', 15));
+console.log(calc(10, '-', 15));
+
+const dog = {
+    name: 'Jack',
+    age: 2
+};
+const addKeyValue = (obj, key, value) => {
+    // let newObj = obj;
+    // newObj[key] = value;
+
+    // return newObj;
+    obj[key] = value;
+    return obj
+}
+
+addKeyValue(dog, 'breed', 'rottweiler')
+console.log(dog)
+
+const strRepeat = (n, str) => {
+    // return str.repeat(n)
+    let strin = '';
+    for (let i = 0; i < n; i++) {
+        strin = strin + str;
+    }
+
+    return strin;
+}
+console.log(strRepeat(5, ' Hello'))

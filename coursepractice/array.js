@@ -88,3 +88,30 @@ const someNum = [22, 34, 9, 15, 60, 3, 101]
 const someNumSort = someNum.sort((a, b) => b - a);
 // console.log(someNum.sort())
 console.log(someNumSort);
+
+
+//////////////////////////9.11.21///////////////////////////////////////
+
+const fruits = ['apple', 'banana', 'pineaple', 'strawbery'];
+const vegetables = ['carrot', 'potato', 'tomato'];
+const numByTwo = [9, 11, 15, 7];
+// let newNum = numByTwo.map(item => item * 2);
+// console.log(newNum);
+// fruits.pop();
+// fruits.push('lemon');
+// fruits.shift();
+// fruits.unshift('orange')
+// let newFood = fruits.concat(vegetables);
+// console.log(newFood);
+// fruits.forEach((item, i) => {
+//     console.log(item, i);
+// });
+// let newVegetables = vegetables.map(item => item + ' It is a vegetable');
+// console.log(newVegetables);
+// console.log(fruits.slice(2, 3));
+// console.log(fruits.sort());
+// console.log(numByTwo.sort((a, b) => a - b));
+// console.log(vegetables.indexOf('potato'));
+// console.log(fruits.filter(item => item.length > 7));
+// console.log(numByTwo.filter(item => item > 10));
+console.log(fruits.join('-'));

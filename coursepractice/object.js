@@ -112,3 +112,71 @@ const obj3 = {
     ...obj2
 };
 console.log(obj3);
+
+
+/////////////////9.11.21//////////////////////////////
+/////////////spread//////////////////////////////////
+
+const cityUkraine = ['Lviv', 'Kyiv', 'Odessa', 'Harkiv', 'Dnipro'];
+const cityEurope = ['Warsaw', 'Berlin', 'Prague','Rome', 'Paris'];
+
+console.log(...cityUkraine);
+const allCity = [...cityUkraine, 'New York', ...cityEurope];
+console.log(allCity);
+
+const cityPopulationEurope = {
+    Kyiv: 3,
+    Lviv: 1,
+    Warsaw: 2,
+};
+
+const cityPopulationAsia = {
+    Tokio: 20,
+    Stambull: 15,
+    Pekin: 30,
+    Delli: 25
+}
+
+console.log({...cityPopulationEurope, ...cityPopulationAsia});
+
+///////////////rest///////////////////////////////////////////
+
+function sum(a, b, ...rest) {
+    // console.log(rest)
+    return a + b + rest.reduce((a, i) => a + i, 0);
+};
+
+const numbers = [1, 2, 3, 4, 5];
+// console.log(sum(...numbers));
+
+//деструктуризація
+// const [a, b] = numbers;
+const [a, b, ...other] = numbers;
+console.log(a, b, other);
+
+const person = {
+    name: 'Misha',
+    age: 31,
+    city: 'Rohatyn',
+    country: 'Ukraine'
+}
+
+const {name, age, ...adress} = person;
+console.log(name, age, adress);
+
+function calcValues(a, b) {
+    return [
+        a + b,
+        a - b,
+        a * b,
+        a / b
+    ]
+}
+
+// console.log(calcValues(40, 30))
+// const result = calcValues(40, 30);
+const [sum, sub] = calcValues(40, 30);
+// const sum = result[0];
+// const sub = result[1];
+// const [sum, sub] = result;
+console.log(sum, sub);

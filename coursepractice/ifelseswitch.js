@@ -54,3 +54,33 @@ switch(number1) {
         console.log('Oops')
     }
 }
+
+
+///////////////////////////9.11.21//////////////////////////////
+const country = 'Lviv'
+
+switch(country) {
+    case 'Ukraine':
+    case 'Lviv':
+    case 'Sudova Vyshnya':
+        console.log('I live here');
+        break;
+    case 'Poland':
+        console.log('I also live here');
+    case 'Italy': 
+        console.log('I want visit');
+        break;
+    default: 
+        console.log('I stay home');   
+};
+
+let some = 'Plan';
+
+if (some.length > 5 && typeof some === 'string' ) {
+    console.log('It is a big string');
+} else if (some.length < 5 || typeof some === 'string') {
+    console.log('It is a string');
+} else {
+    console.log('Error');
+}
+

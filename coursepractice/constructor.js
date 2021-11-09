@@ -71,7 +71,6 @@ console.log(doc);
 doc.sayBye();
 
 
-
 class Ford  {
     constructor(model, color) {
         this._model = model;
@@ -88,3 +87,32 @@ class Ford  {
 const fusion = new Ford('Fusion', 'Gray');
 console.log(fusion)
 
+/////////////////////////9.11.21/////////////////////////////////////////
+class Car {
+    constructor(manufacture, model, year, color, engine, fueltype) {
+        this.manufacture = manufacture;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.engine = engine;
+        this.fueltype = fueltype;
+    }
+    aboutCar() {
+        console.log(`The ${this.manufacture} ${this.model} was produce in ${this.year},have a beutiful ${this.color} color,reliable ${this.engine} engine and consume ${this.fueltype}`)
+    }
+}
+
+const ford = new Car('Ford', 'Edge', 2021, 'White', 'EcoBoost 2.5L', 'Gas');
+console.log(ford);
+ford.aboutCar()
+
+class newCar extends Car {
+    constructor(manufacture, model, year, color, engine, fueltype, clas) {
+        super(manufacture, model, year, color, engine, fueltype, clas)
+        this.clas = clas;
+    }
+}
+
+let dodge = new newCar('Dodge', 'Ram 3500', 2021, 'Black', 'Hemi 6.2L', 'Oil', 'Pick Up');
+console.log(dodge);
+dodge.aboutCar()
