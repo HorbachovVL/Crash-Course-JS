@@ -197,8 +197,9 @@ const newPerson = people
     .filter(person => person.budget > 100000)
     .map(person => {
         return {
-            info: `${person.name} (${person.age})`,
-            budget: person.budget
+            name: `${person.name} (${person.age})`,
+            budget: person.budget,
+            // sum: person.age + person.budget
         }
     })
     // .reduce((total, person) => total + person.budget, 0)
