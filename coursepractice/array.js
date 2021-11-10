@@ -115,3 +115,94 @@ const numByTwo = [9, 11, 15, 7];
 // console.log(fruits.filter(item => item.length > 7));
 // console.log(numByTwo.filter(item => item > 10));
 console.log(fruits.join('-'));
+
+///////////////////10.11.21/////////////////////////////////////////////
+
+// const people = [
+//     {name: 'John', age: 50, budget: 150000},
+//     {name: 'David', age: 42, budget: 250000},
+//     {name: 'Jessi', age: 30, budget: 15000},
+//     {name: 'Lara', age: 20, budget: 10000}
+// ]
+
+//forEach
+// people.forEach(function(person, index, peopArr) {
+//     console.log(person);
+//     console.log(index);
+//     console.log(peopArr);
+// })
+
+// people.forEach(person => console.log(person));
+
+//map
+const newPeople = people.map(person => {
+    return person.name;
+})
+
+console.log(newPeople);
+
+//filter
+// const more40 = [];
+
+// for (let i = 0; i < people.length; i++) {
+//     if (people[i].age >= 40) {
+//         more40.push(people[i])
+//     }
+// }
+
+const more40 = people.filter(person => {
+    return person.age >= 40;
+})
+
+console.log(more40)
+
+
+const people = [
+    {name: 'John', age: 50, budget: 150000},
+    {name: 'David', age: 42, budget: 250000},
+    {name: 'Jessi', age: 30, budget: 15000},
+    {name: 'Lara', age: 20, budget: 10000}
+]
+
+//reduce
+// let amount = 0;
+// for (let i = 0; i < people.length; i++) {
+//     amount += people[i].budget
+// }
+const amount = people.reduce((total, person) => {
+    return total + person.budget
+}, 0)
+
+console.log(amount)
+
+//find
+const nameDavid = people.find(people => people.name === 'David')
+
+console.log(nameDavid)
+
+//findIndex
+const indexLara = people.findIndex(people => people.name === 'Lara')
+
+console.log(indexLara)
+
+/////////////////////
+const people = [
+    {name: 'John', age: 50, budget: 150000},
+    {name: 'David', age: 42, budget: 250000},
+    {name: 'Jessi', age: 30, budget: 15000},
+    {name: 'Lara', age: 20, budget: 10000}
+]
+
+const newPerson = people
+    .filter(person => person.budget > 100000)
+    .map(person => {
+        return {
+            info: `${person.name} (${person.age})`,
+            budget: person.budget
+        }
+    })
+    // .reduce((total, person) => total + person.budget, 0)
+
+
+console.log(newPerson)
+
