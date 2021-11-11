@@ -106,15 +106,12 @@ function calculateFigureArea(figureType, a, b) {
   switch (figureType) {
     case "square":
       return a * a
-      break;
     case "circle":
-      return a * a * Math.PI; 
-      break;   
+      return a * a * Math.PI;   
     case "rectangle":
-      return a * b; 
-      break;  
+      return a * b;   
     default: 
-      return 'Something went wrong'
+      return 'Something go wrong'
   }
 };
 

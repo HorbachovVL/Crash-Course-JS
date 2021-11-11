@@ -170,8 +170,6 @@ function valueByKeyInObject(key, obj = {}) {
     return newObj;
 }
 
-console.log(valueByKeyInObject('name', human));
-
 const music = {
     band: 'Evanescence',
     vocalist: 'Amy Lee'
