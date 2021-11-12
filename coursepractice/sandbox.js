@@ -1,8 +1,7 @@
-//1: https://codesandbox.io/s/js-array-basic-tasks-forked-sirro?file=/src/basicTasks.js
-//2: https://codesandbox.io/s/js-funcs-tasks-forked-lqwkw?file=/src/tasksWithFunctions.js
+//https://codesandbox.io/u/inna-i
 
 //////////////////////////////////////////////////////////////////////////////////////////
-//TASK 1
+//TASK 1 Basic Task
 /////////////////////////////////////////////////////////////////////////////////////////
 // Task 1 - add new fields name with value "Felix", and age - 7
 const objWithNewFields = {};
@@ -40,7 +39,7 @@ objWithNums.nums = [2, 3];
 
 
 //////////////////////////////////////////////////////////////////////////
-//TASK 2
+//TASK 2 Function
 /////////////////////////////////////////////////////////////////////////
 // Task 1 - should return the string "Hello, World!"
 function sayHelloWorld() {
@@ -119,7 +118,7 @@ console.log(calculateFigureArea("circle", 10, 15));
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-//TASK 3
+//TASK 3 Arrays
 //////////////////////////////////////////////////////////////////////////////////
 
 // Task 1 - add next numbers to the 3, 4, 5, 6
@@ -167,44 +166,46 @@ const sortedArray = [4, 2, 3, 1];
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-//TASK 4
+//TASK 4 Array Methods
 //////////////////////////////////////////////////////////////////////////////////
 
 // Task 1 - sort an array with numbers
-// const arrayNums = [7,101,3,1,9,11,100,111]
+const arrayNums = [7,101,3,1,9,11,100,111]
 function sortArray(array) {
   return array.sort((a, b) => a - b)
 }
+console.log(sortArray(arrayNums))
 
 // Task 2 - filter an array of strings and keep only
 // a string, that doesn't contain the word 'test'
-// const stringsArray = [
-//   'one-test', 'cat', 'parrot',
-//   'banana', 'test-dog', 'dog'
-// ]
+const stringsArray = [
+  'one-test', 'cat', 'parrot',
+  'banana', 'test-dog', 'dog'
+]
 function filterStringsArray(array) {
   return array.filter(item => !item.match('test'))
 }
+console.log(filterStringsArray(stringsArray))
 
 // Task 3 - find sum of numbers in array using .reduce()
-// const numsArray = [
-//   1, 3, 5, 10, 19, 100, 200, 33,
-// ]
+const numsArray = [
+  1, 3, 5, 10, 19, 100, 200, 33,
+]
 function sumNumbersInArray(array) {
   return array.reduce((total, item) => total + item, 0)
 }
-
+console.log(sumNumbersInArray(numsArray))
 
 // Task 4 - filter items, where a > 5 and extend with
 // new field *sum* with value a + b
-// const arrayItems = [
-//   { a: 1, b: 3 },
-//   { a: 3, b: 3 },
-//   { a: 6, b: 3 },
-//   { a: 10, b: 10 },
-//   { a: 41, b: 1 },
-//   { a: 0, b: 4 }
-// ];
+const arrayItems = [
+  { a: 1, b: 3 },
+  { a: 3, b: 3 },
+  { a: 6, b: 3 },
+  { a: 10, b: 10 },
+  { a: 41, b: 1 },
+  { a: 0, b: 4 }
+];
 function filterAndExtendArrayItems(array) {
   return array
   .filter((item) => item.a > 5)
@@ -216,7 +217,7 @@ function filterAndExtendArrayItems(array) {
     }
   })
 }
-
+console.log(filterAndExtendArrayItems(arrayItems))
 
 // Task 5 - merge arrays and remove duplicates
 const arNum = [1, 2, 3, 4, 5, 6];
@@ -224,56 +225,112 @@ const arNum2 = [15, 6, 3, 20, 11];
 function mergeArraysWithoutDuplicates(array1, array2) {
   return [...new Set([...array1, ...array2])]
 }
-
+console.log(mergeArraysWithoutDuplicates(arNum, arNum2))
 
 
 ///////////////////////////////////////////////////////////
-//TASK 5
+//TASK 5 Loop Methods
 //////////////////////////////////////////////////////////
 
-// Task 1 - find sum of all number in 2 arrays
+// Task 1 - find sum of all number in 2 arrays                                 ///Work///
 const arrayNums1 = [7,101,3,1,9,11,100,111] // 343
 const arrayNums2 = [90,101,3,1,69,11,10,111] // 396
 // 343 + 396
 function sumNumsInArrays(array1, array2) {
-  return  array1.concat(array2).reduce((sum, current) => sum + current, 0)
+  const newArr = [...array1, ...array2];
+  let sum = 0;
+  for (let i = 0; i < newArr.length; i++) {
+      sum += newArr[i]
+  }
+  return sum;
 }
+console.log(sumNumsInArrays(arrayNums1, arrayNums2))
 
-
-// Task 2 - Using a 'for' loop print all even
+// Task 2 - Using a 'for' loop print all even                                 ///Work///But not like need
 // numbers up to and including n, as a comma separated string.
 // Don’t include 0
 // const n = 20;
 // Example output:
 // "2, 4, 6, 8, 10, 12, 14, 16, 18, 20"
 function printEvenNumbers(n) {
- 
+  for (let i = 2; i <= n; i++) {
+    if (i % 2 === 0){
+      console.log(i)
+    }
+  }
 }
+printEvenNumbers(20);
 
-// Task 3 - Using a 'for' loop output the elements in reverse order
-// const arr = [
-//   43, "what", 9, true, "cannot", false, "be", 3, true
-// ];
-function reverseArrayItems(array) {}
+// Task 3 - Using a 'for' loop output the elements in reverse order        ///work///
+const arr = [
+  43, "what", 9, true, "cannot", false, "be", 3, true
+];
+function reverseArrayItems(array) {
+  let reverse = [];
+  for (let i =  0; i < array.length; i++) {
+    reverse[i] = array[(array.length -1) - i]
+  }
+   return reverse
+}
+console.log(reverseArrayItems(arr))
 
-// Task 4 - Add up each element in the same position and
+
+
+// Task 4 - Add up each element in the same position and                   ///Work///
 // create a new array containing the sum of each pair.
 // Assume both arrays are of the same length.
-// let array1   = [4, 6, 7];
-// let array2  = [8, 1, 9];
+let array1   = [4, 6, 7];
+let array2  = [8, 1, 9];
 // Example output:
 // [12, 7, 16]
-function sumNumsSamePosition(array1, array2) {}
+function sumNumsSamePosition(array1, array2) {
+  let sum = array1.map((a, i) => a + array2[i]);
+  return sum;
+}
+console.log(sumNumsSamePosition(array1, array2))
 
-// Task 5 - find sum of all number in array using 'while' loop
-function sumNums(array) {}
+
+// Task 5 - find sum of all number in array using 'while' loop      ///Work///
+const arr = [4, 6, 7, 10]
+function sumNums(array) {
+  let i = 0; 
+  let sum = 0;
+  while(i < array.length) {
+      sum += + array[i]; 
+      i++;
+  }
+  return sum
+}
+
+console.log(sumNums(arr))
+
 
 // Task 6 - filter array of string using 'for' or 'while' loop
 // and keep only elements where length > 4 and without the word 'error'
-// const strArr = ['error01', 'in a galaxy', 'start-error', far far', 'away', '0994-error']
-function filterArrayWithStrings(array) {}
+const strArr = ['error01', 'in a galaxy', 'start-error', 'far far', 'away', '0994-error']
+function filterArrayWithStrings(array) {
+  // let sortArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].length > 4 && array[i] != 'error01'){
+      console.log(array[i])
+    } 
+  }
+}
+filterArrayWithStrings(strArr)
 
-// Task 7 - given a number n calculate the factorial of
+
+// Task 7 - given a number n calculate the factorial of                    ///Work///
 // the number using 'for' or 'while' loop
 // n! => 1*2*3*4*5
-function factorial(n) {}
+function factorial(n) {
+  let counter = 1;
+  while (n >= 1) {
+    counter *= n;
+    n--;
+  }
+  return counter;
+}
+
+console.log(factorial(5))
+
+
