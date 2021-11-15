@@ -169,14 +169,14 @@ const sortedArray = [4, 2, 3, 1];
 //TASK 4 Array Methods
 //////////////////////////////////////////////////////////////////////////////////
 
-// Task 1 - sort an array with numbers
+// Task 1 - sort an array with numbers                            //work
 const arrayNums = [7,101,3,1,9,11,100,111]
 function sortArray(array) {
   return array.sort((a, b) => a - b)
 }
 console.log(sortArray(arrayNums))
 
-// Task 2 - filter an array of strings and keep only
+// Task 2 - filter an array of strings and keep only           //work
 // a string, that doesn't contain the word 'test'
 const stringsArray = [
   'one-test', 'cat', 'parrot',
@@ -187,7 +187,7 @@ function filterStringsArray(array) {
 }
 console.log(filterStringsArray(stringsArray))
 
-// Task 3 - find sum of numbers in array using .reduce()
+// Task 3 - find sum of numbers in array using .reduce()      //work
 const numsArray = [
   1, 3, 5, 10, 19, 100, 200, 33,
 ]
@@ -196,7 +196,7 @@ function sumNumbersInArray(array) {
 }
 console.log(sumNumbersInArray(numsArray))
 
-// Task 4 - filter items, where a > 5 and extend with
+// Task 4 - filter items, where a > 5 and extend with              //work
 // new field *sum* with value a + b
 const arrayItems = [
   { a: 1, b: 3 },
@@ -219,7 +219,7 @@ function filterAndExtendArrayItems(array) {
 }
 console.log(filterAndExtendArrayItems(arrayItems))
 
-// Task 5 - merge arrays and remove duplicates
+// Task 5 - merge arrays and remove duplicates                       ///work
 const arNum = [1, 2, 3, 4, 5, 6];
 const arNum2 = [15, 6, 3, 20, 11];
 function mergeArraysWithoutDuplicates(array1, array2) {
@@ -253,13 +253,15 @@ console.log(sumNumsInArrays(arrayNums1, arrayNums2))
 // Example output:
 // "2, 4, 6, 8, 10, 12, 14, 16, 18, 20"
 function printEvenNumbers(n) {
+  const evenNumbers = []
   for (let i = 2; i <= n; i++) {
     if (i % 2 === 0){
-      console.log(i)
+      evenNumbers.push(i)
     }
   }
+  return evenNumbers.join(', ');
 }
-printEvenNumbers(20);
+console.log(printEvenNumbers(22));
 
 // Task 3 - Using a 'for' loop output the elements in reverse order        ///work///
 const arr = [
@@ -306,17 +308,14 @@ console.log(sumNums(arr))
 
 
 // Task 6 - filter array of string using 'for' or 'while' loop
-// and keep only elements where length > 4 and without the word 'error'
+// and keep only elements where length >= 4 and without the word 'error'
 const strArr = ['error01', 'in a galaxy', 'start-error', 'far far', 'away', '0994-error']
 function filterArrayWithStrings(array) {
-  // let sortArr = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].length > 4 && array[i] != 'error01'){
-      console.log(array[i])
-    } 
-  }
+  const result = array.filter(words => words.length >= 4 && !words.includes('error'))
+  return result
 }
-filterArrayWithStrings(strArr)
+// filterArrayWithStrings(strArr)
+console.log(filterArrayWithStrings(strArr))
 
 
 // Task 7 - given a number n calculate the factorial of                    ///Work///
