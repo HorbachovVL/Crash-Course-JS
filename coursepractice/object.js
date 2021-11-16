@@ -180,3 +180,37 @@ const [sum, sub] = calcValues(40, 30);
 // const sub = result[1];
 // const [sum, sub] = result;
 console.log(sum, sub);
+
+
+/////////////////////////////////////16.11.21/////////////////////////////////////////////////
+
+////////////////////////////////////Map/////////////////////////////////////////////////////
+
+const obj = {
+    name: 'Volodymyr',
+    age: 32,
+    job: 'Test Engineer'
+}
+
+const entries = [
+    ['name', 'Volodymyr'],
+    ['age', 32],
+    ['job', 'Test Engineer']
+]
+
+// console.log(Object.entries(obj)) //Turn Object into Array
+// console.log(Object.fromEntries(entries)) //Turn Array into Object
+
+const map = new Map(entries);
+console.log(map.get('age'));
+map
+    .set('info', 'error')
+    .set(obj, 'new value')
+console.log(map);
+console.log(map.get(obj))
+
+////////////////////////////////////////////Set////////////////////////////////////////
+
+const set = new Set([1, 2, 3, 5, 5, 6, 6, 8, 9])
+set.add(10).add(20).add(30).add(20)
+console.log(set)

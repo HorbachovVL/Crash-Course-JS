@@ -207,3 +207,60 @@ const newPerson = people
 
 console.log(newPerson)
 
+
+
+//////////////////////////////////////////////16.11.21/////////////////////////////////////////////////////
+
+const country = [
+    {name: 'Ukraine', capital: 'Kyiv', population: 42},
+    {name: 'Poland', capital: 'Warsaw', population: 40},
+    {name: 'Germany', capital: 'Berlin', population: 82},
+    {name: 'Italy', capital: 'Rome', population: 60},
+    {name: 'USA', capital: 'Washington', population: 320},
+]
+
+//////////////////////////////////////forEach//////////////////////////////////////////////////////////////
+
+country.forEach((item, index, countr) => {
+    // console.log(item);
+    // console.log(index);
+    // console.log(countr);
+})
+
+/////////////////////////////////////Map//////////////////////////////////////////////////////////////////
+
+// const newCountry = country.map((item, index) => {
+//     // return {name: item.name, capital: item.capital, population: item.population, number: index}
+//     return item.population / 2;
+    
+// })
+// console.log(newCountry)
+
+
+////////////////////////////////////Filter////////////////////////////////////////////////////////////////
+
+// const newCountry = country.filter(item => item.population > 50 && item.capital.includes('n'))
+
+// console.log(newCountry)
+
+
+///////////////////////////////////Reduce////////////////////////////////////////////////////////////////
+
+// const newCountryPopulation = country.reduce((total, item) => {  //total рівне нулю,або якомось іншому значені,що йде другим параметром
+//     return total + item.population
+// }, 0)
+
+// console.log(newCountryPopulation)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const countryNew = country
+.filter(item => item.population < 50)
+.map(item => {
+    return {
+        countryName: item.name,
+        countryPopulation: item.population
+    }
+})
+
+console.log(countryNew)
