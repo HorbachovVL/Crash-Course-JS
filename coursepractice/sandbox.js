@@ -333,3 +333,72 @@ function factorial(n) {
 console.log(factorial(5))
 
 
+///////////////////////////////////////////////////////////
+//TASK 6 String Methods
+//////////////////////////////////////////////////////////
+
+
+// Tasks 1 -  convert array of strings
+// from lowercase to uppercase
+const arr = ['human', 'people', 'animal', 'planet']
+function convertToUppercase(array) {
+  const upperString = array.map(item => item.toUpperCase())
+  return upperString
+}
+console.log(convertToUppercase(arr))
+
+// Task 2 - should calculate amount of provided letter in
+// the provided string
+// ('letter', 't') => 2
+function calculateLetters(string, letter) {
+  return string.split(letter).length - 1;
+}
+console.log(calculateLetters('Helllllo', 'l'))
+
+// Task 3 - replace numbers with spaces
+// in the provided string
+let str = 'I9like5JS' //=> 'I like JS'
+function replaceNumbers(string) {
+  const str = string.replace(/[0-9]/g, " ");
+  return str;
+}
+console.log(replaceNumbers(str))
+
+// Task 4 - sort strings in array
+const arr = [11, 2, 101, 3, 4, 5, 1, 6]
+const arr2 = ['nemo', 'sea', 'avengers', 'boolean']
+function sortArray(array) {
+  // return array.sort((a, b) => a - b);
+  return array.sort();
+}
+
+console.log(sortArray(arr2))
+
+// Task 5 - return a new string that should contain
+// a letter taken by index argument from every string in array
+// if index is bigger than string length - add space instead
+const arr = ["osmos", "uterque", "water", "crop", "&", "swap", "cat", "brew", "Esmeralda"]
+// index - 1
+// result "start wars"
+function buildStringUsingIndex(array, index) {
+  array.forEach(item => console.log(item.charAt(index))) 
+}
+
+buildStringUsingIndex(arr, 1)
+
+
+// Tasks 6 - check, if string is palindrome
+// and return "The string is palindrome"
+// or "The string is not palindrome"
+function palindromeValidator(str) {
+  if (str === str.split('').reverse().join('')) {
+    return 'The string is palindrome'
+  } else {
+    return 'The string is not palindrome'
+  }
+}
+
+console.log(palindromeValidator('revivers'))
+
+
+
