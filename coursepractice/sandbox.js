@@ -384,7 +384,12 @@ function buildStringUsingIndex(array, index) {
   let result = '';
   for (let i = 0; i < array.length; i++) {
       let str = array[i];
-       result += (str.length > index) ? str[index] : ' ';
+      if(str.length > index) {
+        result += str[index]
+      } else  {
+        result += ' '
+      }
+      // result += (str.length > index) ? str[index] : ' ';
   }
   return result;
 }
