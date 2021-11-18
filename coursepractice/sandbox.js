@@ -351,9 +351,23 @@ console.log(convertToUppercase(arr))
 // the provided string
 // ('letter', 't') => 2
 function calculateLetters(string, letter) {
-  return string.split(letter).length - 1;
+  // return string.split(letter).length - 1; //Simple way
+  // let count = 0;
+  // letter = letter.charAt(0); 
+  //   for(let i = 0; i < string.length; ++i) {
+  //       if(letter === string.charAt(i)) {
+  //           ++count;
+  //       }
+  //   }
+  //   return count;
+  let count = 0;
+  for (let value of string) {
+    if (value == letter)
+    count++;
+  }
+  return count;
 }
-console.log(calculateLetters('Helllllo', 'l'))
+console.log(calculateLetters('Trim', 'i'))
 
 // Task 3 - replace numbers with spaces
 // in the provided string
