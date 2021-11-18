@@ -367,11 +367,7 @@ function calculateLetters(string, letter) {
   }
   return count;
 }
-<<<<<<< HEAD
-console.log(calculateLetters('Trim', 'i'))
-=======
 console.log(calculateLetters('Helllllo', 'e'))
->>>>>>> 611ae7c9ccffe0f2f3160f7b25d75a867c293bae
 
 // Task 3 - replace numbers with spaces
 // in the provided string
