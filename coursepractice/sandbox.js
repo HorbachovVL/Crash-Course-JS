@@ -367,14 +367,18 @@ function calculateLetters(string, letter) {
   }
   return count;
 }
+<<<<<<< HEAD
 console.log(calculateLetters('Trim', 'i'))
+=======
+console.log(calculateLetters('Helllllo', 'e'))
+>>>>>>> 611ae7c9ccffe0f2f3160f7b25d75a867c293bae
 
 // Task 3 - replace numbers with spaces
 // in the provided string
 let str = 'I9like5JS' //=> 'I like JS'
 function replaceNumbers(string) {
-  const str = string.replace(/[0-9]/g, " ");
-  return str;
+  return str = string.replace(/[0-9]/g, " ");
+  
 }
 console.log(replaceNumbers(str))
 
@@ -395,10 +399,19 @@ const arr = ["osmos", "uterque", "water", "crop", "&", "swap", "cat", "brew", "E
 // index - 1
 // result "start wars"
 function buildStringUsingIndex(array, index) {
-  array.forEach(item => console.log(item.charAt(index))) 
+  let result = '';
+  for (let i = 0; i < array.length; i++) {
+      let str = array[i];
+      if(str.length > index) {
+        result += str[index]
+      } else  {
+        result += ' '
+      }
+      // result += (str.length > index) ? str[index] : ' ';
+  }
+  return result;
 }
-
-buildStringUsingIndex(arr, 1)
+console.log(buildStringUsingIndex(arr, 1))
 
 
 // Tasks 6 - check, if string is palindrome
