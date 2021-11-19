@@ -414,14 +414,22 @@ console.log(buildStringUsingIndex(arr, 1))
 // and return "The string is palindrome"
 // or "The string is not palindrome"
 function palindromeValidator(str) {
-  if (str === str.split('').reverse().join('')) {
-    return 'The string is palindrome'
-  } else {
-    return 'The string is not palindrome'
+  // if (str === str.split('').reverse().join('')) {
+  //   return 'The string is palindrome'
+  // } else {
+  //   return 'The string is not palindrome'
+  // }
+
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] !== str[str.length - 1] ){
+      return 'The string is not palindrome'
+    } else {
+      return 'The string is palindrome'
+    }
   }
 }
 
-console.log(palindromeValidator('revivers'))
+console.log(palindromeValidator('ohoho'))
 
 
 
