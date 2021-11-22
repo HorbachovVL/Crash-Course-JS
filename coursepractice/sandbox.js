@@ -57,16 +57,17 @@ function sumNumbers(a, b) {
     return a + b;
 }
   // Task 4 - should return a value by key in provided object
-  // provided object - { name: 'Name' }
+const obj = { name: 'Name' }
   // result - 'Name'
   //this try to understand
 function valueByKeyInObject(key, obj = {}) {
-    const newObj = obj[key];
+    const newObj = obj[key];//так дістаємо значення з об'єкта
     return newObj;
-}
+}                             //бо ключ в об'кті  стрінга
+console.log(valueByKeyInObject('name', obj))
   
   // Task 5 - should return an object with new field and value
-  // without object - { name: 'Name' }
+const object = { name: 'Name' }
   // with an object - { name: 'Name', age: 100 }
   //this try to understand
 function extendObject(key, value, obj = {}) {
@@ -75,7 +76,8 @@ function extendObject(key, value, obj = {}) {
   
     return newObj;
 }
-  
+console.log(extendObject('name', 'Name', object))
+
   // Task 6 - should return a larger argument increased by 100
   // with (10, 7) output - 110
   // with (10, 77) output - 177
@@ -162,7 +164,8 @@ extraFirstElements.unshift(0, 1)
 // Task 6 - swap elements, that have indexes 0 and 3
 const sortedArray = [4, 2, 3, 1];
 // write code just down below
- [sortedArray[0], sortedArray[3]] = [sortedArray[3], sortedArray[0]];
+[sortedArray[0], sortedArray[3]] = [sortedArray[3], sortedArray[0]];
+console.log(sortedArray)
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -269,10 +272,11 @@ const arr = [
 ];
 function reverseArrayItems(array) {
   let reverse = [];
-  for (let i =  0; i < array.length; i++) {
-    reverse[i] = array[(array.length -1) - i]
-  }
-   return reverse
+  for (let i = 0; i < array.length; i++) {    //true,   3,   be
+    reverse[i] = array[(array.length - 1) - i] // 8 - 0, 8 -1, 8 - 2
+                    //індекс який рахується з нуля
+}
+return reverse
 }
 console.log(reverseArrayItems(arr))
 
